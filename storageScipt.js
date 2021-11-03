@@ -31,12 +31,12 @@ function checkForSettingsInLocalStorage() {
 
 //Метод меняет значение какой-нибудь штуки в настройках
 //Можно использовать для какой-нибудь менюшки настроек, чтобы пользователь мог менять параметры на свой вкус
-function changeSettingsItem(itemName, itemValue) {
+export function changeSettingsItem(itemName, itemValue) {
     let storage = JSON.parse(localStorage.getItem(storageKey));
     storage[itemName] = itemValue;
     localStorage.setItem(storageKey, JSON.stringify(storage));
 }
 
-function clearTheStorage() {
+export function clearTheStorage() {
     localStorage.removeItem(storageKey);
 }
