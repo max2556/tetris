@@ -1,3 +1,7 @@
+import { updateDatabase } from "./databaseScript.js";
+import { cellSize, traceBlockColor, backgroundColor, emptyColor, deltaLight, border, gradientBlocks, colors } from "./storageScipt.js";
+
+
 const canvas = document.getElementById("mainField");
 canvas.width = cellSize * 10;
 canvas.height = cellSize * 20;
@@ -279,7 +283,7 @@ function Init() {
 
 function Draw(x, y, state, ctx) {
     if (ctx === undefined) ctx = context;
-
+    let color;
     if (state === undefined || state === null) { color = emptyColor } else { color = state; }
     ctx.fillStyle = color;
     ctx.fillRect(x * cs, y * cs, cs - border, cs - border);
@@ -398,6 +402,7 @@ function CheckForLose(block) {
         if (part.y + block.y <= 0) {
             isLose = true;
             console.log("You lose!");
+            updateDatabase(score);
             return true;
         }
     }

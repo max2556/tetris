@@ -6,7 +6,7 @@ let storageKey = "settings";
 
 
 //Переменные используемые в коде!!! Не менять их имени ни в коем разе, иначе - КРИНДЕЦ!!!!
-let cellSize, traceBlockColor, backgroundColor, emptyColor, deltaLight, border, gradientBlocks, colors;
+export let cellSize, traceBlockColor, backgroundColor, emptyColor, deltaLight, border, gradientBlocks, colors;
 checkForSettingsInLocalStorage();
 
 
