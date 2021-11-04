@@ -8,9 +8,11 @@ export const listOfRecords = await getScores();
 
 
 export function updateDatabase(score_val) {
-    let name = prompt("Введите имя", "Тарас");
-    if (name !== null && name.length >= 3) {
-        set(ref(database, _ + name), score_val);
+    let name = prompt("Введите имя(от 4 до 16)", "Тарас");
+    let guid = uuidv4();
+    console.log(guid);
+    if (name !== null && name.length >= 3 && name.length < 16) {
+        set(ref(database, _ + guid), { name: name, score: score_val });
     }
 }
 
@@ -27,4 +29,10 @@ async function getScores() {
         console.error(error);
     });
     return l;
+}
+
+function uuidv4() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
 }

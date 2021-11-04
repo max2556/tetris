@@ -73,3 +73,11 @@ ul {
     position: fixed;
     right: 60px;
 }
+
+.version {
+    font-size: 24px;
+    font-family: "Comfortaa", sans-serif;
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+}
