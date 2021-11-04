@@ -12,7 +12,7 @@ const version = document.querySelector(".version");
 
 //Переменные
 let lengthOfTable = 10;
-let versionString = "1.001v";
+let versionString = "1.002v";
 
 
 
