@@ -5,10 +5,12 @@
 
 
 import { listOfRecords } from "./databaseScript.js";
+import { Init } from "./tetris.js";
 //Элементы
 const scoresTable = document.getElementById("scoresTable");
 const version = document.querySelector(".version");
-
+const startButton = document.getElementById("startButton");
+const menuOverlay = document.getElementById("menuOverlay");
 
 //Переменные
 let lengthOfTable = 10;
@@ -24,6 +26,13 @@ let versionString = "1.002v";
 //Основная часть
 fillTheTable(lengthOfTable);
 version.textContent = versionString;
+startButton.onclick = startTheGame;
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Escape" && isGameStarted) {
+        isPaused = !isPaused;
+        switchMenu(isPaused);
+    }
+})
 
 
 
@@ -59,4 +68,21 @@ function sortData(list) {
         }
     } while (swapped);
     return inputArr;
+}
+
+function startTheGame() {
+    Init();
+    hideMenu();
+}
+
+function hideMenu() {
+    menuOverlay.hidden = true;
+}
+
+function openMenu() {
+    menuOverlay.hidden = false;
+}
+
+function switchMenu(state) {
+    if (state) { openMenu(); } else { hideMenu(); }
 }

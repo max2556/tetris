@@ -39,14 +39,17 @@
 
 .left {
     height: 100%;
+    width: 240px;
     margin-right: 1rem;
     display: flex;
     flex-direction: column;
+    align-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .right {
-    width: 160px;
-    max-width: 160px;
+    width: 240px;
+    max-width: 240px;
     margin-left: 1rem;
 }
 

@@ -4,33 +4,36 @@
     <meta charset="utf-8">
 </head>
 
-<div class="logo-pos">
-    <span class="red">T</span>
-    <span class="orange">E</span>
-    <span class="yellow">T</span>
-    <span class="green">R</span>
-    <span class="blue">I</span>
-    <span class="purple">S</span>
-</div>
+
 
 
 <div class="version">
 
 </div>
 
-
-
-<div class="buttonsHandler">
-    <div class="buttonsWrapper">
-        <button>Начать игру!</button>
-        <button>Настройки</button>
+<div id="menuOverlay">
+    <div class="logo-pos">
+        <span class="red">T</span>
+        <span class="orange">E</span>
+        <span class="yellow">T</span>
+        <span class="green">R</span>
+        <span class="blue">I</span>
+        <span class="purple">S</span>
+    </div>
+    <div class="buttonsHandler">
+        <div class="buttonsWrapper">
+            <button id="startButton">Начать игру!</button>
+            <button>Настройки</button>
+        </div>
     </div>
 </div>
 
+
+
 <div class="mainPart">
     <div class="left">
-        <canvas id="savedField"></canvas>
         <canvas id="nextField"></canvas>
+        <canvas id="savedField"></canvas>
     </div>
     <div class="center">
         <canvas id="mainField" width="400" height="800"></canvas>
@@ -52,8 +55,8 @@
 </div>
 
 <script src="config.js"></script>
-<script type="module" src="https://max2556.github.io/tetris/storageScipt.js"></script>
-<script type="module" src="https://max2556.github.io/tetris/databaseInit.js"></script>
-<script type="module" src="https://max2556.github.io/tetris/databaseScript.js"></script>
-<script type="module" src="https://max2556.github.io/tetris/tetris.js"></script>
-<script type="module" src="https://max2556.github.io/tetris/frontendScipt.js"></script>
+<script type="module" src="./storageScipt.js"></script>
+<script type="module" src="./databaseInit.js"></script>
+<script type="module" src="./databaseScript.js"></script>
+<script type="module" src="./tetris.js"></script>
+<script type="module" src="./frontendScipt.js"></script>

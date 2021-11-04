@@ -192,9 +192,6 @@ document.addEventListener("keydown", (e) => {
             if (!isAlreadySwitched) SwitchBlocks();
         }
     }
-    if (e.code === "Escape") {
-        isPaused = !isPaused;
-    }
 })
 
 document.addEventListener("touchstart", (e) => {
@@ -279,9 +276,10 @@ function Game() {
 
 
 
-function Init() {
+export function Init() {
     context.fillStyle = backgroundColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
+    isGameStarted = true;
     DrawAll(map);
     setInterval(Draw_interval, 1000 / drawFrameRate);
     Game();
