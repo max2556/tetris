@@ -9,19 +9,19 @@ let isPaused = false;
 let defaultSettings = {
     "cellSize": 40,
     "traceBlockColor": "#888888",
-    "backgroundColor": "#444444",
-    "emptyColor": "#444444",
-    "deltaLight": 5,
-    "border": 5,
-    "gradientBlocks": false,
+    "backgroundColor": "#333333",
+    "emptyColor": "#333333",
+    "deltaLight": 2,
+    "border": 0,
+    "gradientBlocks": true,
     "colors": [
-        "hsl(0, 100%, 50%)",
-        "hsl(30, 100%, 60%)",
-        "hsl(50, 100%, 50%)",
-        "hsl(110, 100%, 50%)",
-        "hsl(180, 100%, 50%)",
-        "hsl(230, 100%, 65%)",
-        "hsl(285, 100%, 50%)"
+        "hsl(0, 100%, 70%)",
+        "hsl(30, 100%, 70%)",
+        "hsl(50, 100%, 70%)",
+        "hsl(110, 100%, 70%)",
+        "hsl(180, 100%, 70%)",
+        "hsl(230, 100%, 75%)",
+        "hsl(285, 100%, 70%)"
     ]
 };
 
