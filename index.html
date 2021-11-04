@@ -1,28 +1,59 @@
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <meta charset="utf-8">
 </head>
 
-<div class="handler">
-    <div id="score">0</div>
-    <div id="row">0</div>
-    <div id="level">0</div>
+<div class="logo-pos">
+    <span class="red">T</span>
+    <span class="orange">E</span>
+    <span class="yellow">T</span>
+    <span class="green">R</span>
+    <span class="blue">I</span>
+    <span class="purple">S</span>
 </div>
-<div class="tableHandler">
-    <ul id="scoresTable">
 
-    </ul>
-</div>
+
 <div class="version">
 
 </div>
-<canvas id="savedField"></canvas>
-<canvas id="nextField"></canvas>
-<canvas id="mainField" width="400" height="800"></canvas>
+
+
+
+<div class="buttonsHandler">
+    <div class="buttonsWrapper">
+        <button>Начать игру!</button>
+        <button>Настройки</button>
+    </div>
+</div>
+
+<div class="mainPart">
+    <div class="left">
+        <canvas id="savedField"></canvas>
+        <canvas id="nextField"></canvas>
+    </div>
+    <div class="center">
+        <canvas id="mainField" width="400" height="800"></canvas>
+    </div>
+    <div class="right">
+
+        <div class="scoresHandler">
+            <div class="text-center">STATS</div>
+            <div class="flexTable"><span class="fixedLength">Score:</span> <span id="score">0</span></div>
+            <div class="flexTable"><span class="fixedLength">Rows:</span><span id="row">0</span></div>
+            <div class="flexTable"><span class="fixedLength">Level:</span><span id="level">0</span></div>
+        </div>
+        <div class="tableHandler">
+            <ul id="scoresTable">
+
+            </ul>
+        </div>
+    </div>
+</div>
 
 <script src="config.js"></script>
-<script type="module" src="storageScipt.js"></script>
-<script type="module" src="databaseInit.js"></script>
-<script type="module" src="databaseScript.js"></script>
-<script type="module" src="tetris.js"></script>
-<script type="module" src="frontendScipt.js"></script>
+<script type="module" src="https://max2556.github.io/tetris/storageScipt.js"></script>
+<script type="module" src="https://max2556.github.io/tetris/databaseInit.js"></script>
+<script type="module" src="https://max2556.github.io/tetris/databaseScript.js"></script>
+<script type="module" src="https://max2556.github.io/tetris/tetris.js"></script>
+<script type="module" src="https://max2556.github.io/tetris/frontendScipt.js"></script>

@@ -10,6 +10,7 @@ export const listOfRecords = await getScores();
 export function updateDatabase(score_val) {
     let name = prompt("Введите имя(от 4 до 16)", "Тарас");
     let guid = uuidv4();
+    //Или можно использовать crypto.randomUUID()
     console.log(guid);
     if (name !== null && name.length >= 3 && name.length < 16) {
         set(ref(database, _ + guid), { name: name, score: score_val });

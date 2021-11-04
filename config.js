@@ -1,5 +1,5 @@
 //Переменные указывающие состояние игры: старт, поражение, пауза
-let isGameStarted = true;
+let isGameStarted = false;
 let isLose = false;
 let isPaused = false;
 
@@ -13,7 +13,7 @@ let defaultSettings = {
     "emptyColor": "#333333",
     "deltaLight": 2,
     "border": 0,
-    "gradientBlocks": true,
+    "gradientBlocks": false,
     "colors": [
         "hsl(0, 100%, 70%)",
         "hsl(30, 100%, 70%)",

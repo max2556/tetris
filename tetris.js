@@ -6,7 +6,8 @@ const canvas = document.getElementById("mainField");
 canvas.width = cellSize * 10;
 canvas.height = cellSize * 20;
 const context = canvas.getContext('2d');
-
+context.fillStyle = backgroundColor;
+context.fillRect(0, 0, canvas.width, canvas.height);
 
 const savedCanvas = document.getElementById("savedField");
 savedCanvas.width = cellSize * 4;
@@ -19,6 +20,9 @@ const nextCanvas = document.getElementById("nextField");
 nextCanvas.width = cellSize * 4;
 nextCanvas.height = cellSize * 2;
 const nextContext = nextCanvas.getContext("2d");
+nextContext.fillStyle = backgroundColor;
+nextContext.fillRect(0, 0, nextCanvas.width, nextCanvas.height);
+
 
 const scoreDiv = document.getElementById("score");
 const rowDiv = document.getElementById("row");
@@ -156,10 +160,11 @@ let savedBlock = null;
 let nextBlock = CreateNewBlock();
 let counter = 0;
 let isAlreadySwitched = false
-Init();
-Game();
-//setInterval(Game, 1000 / dropRate);
-setInterval(Draw_interval, 1000 / drawFrameRate);
+
+if (isGameStarted && !isLose && !isPaused) {
+    Init();
+}
+
 
 //#endregion
 
@@ -278,6 +283,8 @@ function Init() {
     context.fillStyle = backgroundColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
     DrawAll(map);
+    setInterval(Draw_interval, 1000 / drawFrameRate);
+    Game();
 }
 
 
