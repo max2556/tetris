@@ -7,12 +7,10 @@ body {
     overflow-y: hidden
 }
 
-
-/*
 canvas {
     z-index: 0;
     position: absolute;
-}*/
+}
 
 button {
     z-index: 1;
@@ -35,8 +33,6 @@ button:hover {
     color: white;
 }
 
-
-/*
 #savedField {
     position: absolute;
     left: 500px;
@@ -46,7 +42,7 @@ button:hover {
 #nextField {
     position: absolute;
     left: 500px;
-}*/
+}
 
 div {
     font-size: 24px;

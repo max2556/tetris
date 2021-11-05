@@ -1,5 +1,5 @@
 //Переменные указывающие состояние игры: старт, поражение, пауза
-let isGameStarted = false;
+let isGameStarted = true;
 let isLose = false;
 let isPaused = false;
 
