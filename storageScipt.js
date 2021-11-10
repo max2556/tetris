@@ -40,3 +40,7 @@ export function changeSettingsItem(itemName, itemValue) {
 export function clearTheStorage() {
     localStorage.removeItem(storageKey);
 }
+
+export function getStorage() {
+    return JSON.parse(localStorage.getItem(storageKey));
+}

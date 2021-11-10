@@ -1,4 +1,5 @@
 import { updateDatabase } from "./databaseScript.js";
+import { initAlert } from "./frontendScipt.js";
 import { cellSize, traceBlockColor, backgroundColor, emptyColor, deltaLight, border, gradientBlocks, colors } from "./storageScipt.js";
 
 
@@ -13,14 +14,14 @@ const savedCanvas = document.getElementById("savedField");
 savedCanvas.width = cellSize * 4;
 savedCanvas.height = cellSize * 2;
 const savedContext = savedCanvas.getContext("2d");
-savedContext.fillStyle = backgroundColor;
+savedContext.fillStyle = emptyColor;
 savedContext.fillRect(0, 0, savedCanvas.width, savedCanvas.height);
 
 const nextCanvas = document.getElementById("nextField");
 nextCanvas.width = cellSize * 4;
 nextCanvas.height = cellSize * 2;
 const nextContext = nextCanvas.getContext("2d");
-nextContext.fillStyle = backgroundColor;
+nextContext.fillStyle = emptyColor;
 nextContext.fillRect(0, 0, nextCanvas.width, nextCanvas.height);
 
 
@@ -142,7 +143,7 @@ let map = [];
 
 
 
-let score = 0;
+export let score = 0;
 let rows = 0;
 let level = 0;
 
@@ -159,7 +160,7 @@ let currentBlock = CreateNewBlock();
 let savedBlock = null;
 let nextBlock = CreateNewBlock();
 let counter = 0;
-let isAlreadySwitched = false
+let isAlreadySwitched = false;
 
 if (isGameStarted && !isLose && !isPaused) {
     Init();
@@ -285,6 +286,21 @@ export function Init() {
     Game();
 }
 
+export function ClearGame() {
+    map = new Array(map_height).fill(null).map(function(num) { return new Array(map_width).fill(null) });
+    currentBlock = CreateNewBlock();
+    savedBlock = null;
+    nextBlock = CreateNewBlock();
+    counter = 0;
+    isAlreadySwitched = false;
+    isLose = false;
+    isPaused = false;
+    isGameStarted = true;
+    score = 0;
+    rows = 0;
+    level = 0;
+}
+
 
 function Draw(x, y, state, ctx) {
     if (ctx === undefined) ctx = context;
@@ -330,7 +346,7 @@ function DrawBlock(block) {
 
 
 function DrawSavedBlock(block, ctx) {
-    ctx.fillStyle = backgroundColor;
+    ctx.fillStyle = emptyColor;
     ctx.fillRect(0, 0, 4 * cellSize, 2 * cellSize);
     for (let part of patterns[0][block.patternType]) {
         let y = part.y;
@@ -341,7 +357,7 @@ function DrawSavedBlock(block, ctx) {
 }
 
 function DrawNextBlock(block, ctx) {
-    ctx.fillStyle = backgroundColor;
+    ctx.fillStyle = emptyColor;
     ctx.fillRect(0, 0, 4 * cellSize, 2 * cellSize);
     for (let part of block.pattern) {
         let y = part.y;
@@ -407,7 +423,7 @@ function CheckForLose(block) {
         if (part.y + block.y <= 0) {
             isLose = true;
             console.log("You lose!");
-            updateDatabase(score);
+            initAlert();
             return true;
         }
     }
