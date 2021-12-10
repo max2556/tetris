@@ -7,8 +7,7 @@ const _ = "scores/"
 export const listOfRecords = await getScores();
 
 
-export function updateDatabase(score_val) {
-    let name = prompt("Введите имя(от 4 до 16)", "Тарас");
+export function updateDatabase(score_val, name) {
     let guid = uuidv4();
     //Или можно использовать crypto.randomUUID()
     console.log(guid);
